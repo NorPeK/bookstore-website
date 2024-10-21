@@ -3,10 +3,23 @@ import { PORT, mongoDBURL } from "./config.js"; // Import configuration variable
 import mongoose from "mongoose"; // Import Mongoose for interacting with MongoDB
 //import { Book } from './models/bookModel.js'; // Import the Book model for managing book data in the database
 import bookRoute from './routes/booksRoute.js'
+import cors from 'cors'; // middleware for handling CORS policy
+
 
 const app = express(); // Create an instance of the Express application
 
 app.use(express.json()); // Middleware to parse incoming JSON requests to JS
+
+
+// Option 1: Allow all origins with default of cors(*)
+//app.use(cors());
+
+// Option 2: Allow Custom Origins
+app.use(cors({
+    origin: 'http://localhost:3000',
+    methods: ['GET' , 'POST' , 'PUT', 'DELETE'],
+    allowedHeaders: ['Content-Type'],
+}))
 
 // Route to handle GET requests to the root URL
 app.get('/', (request, response) => {
