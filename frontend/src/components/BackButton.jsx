@@ -1,5 +1,4 @@
 import { Link } from "react-router-dom"
-<<<<<<< HEAD
 import { BsArrowLeft } from "react-icons/bs"
 
 
@@ -10,12 +9,6 @@ const BackButton = ({ destination = '/'}) => {
             <BsArrowLeft className="text-2xl"/>
         </Link>
     </div>
-=======
-
-const BackButton = () => {
-  return (
-    <div>BackButton</div>
->>>>>>> f714f1bc3671b5e249a5fe4c59da20d685e4d28c
   )
 }
 
