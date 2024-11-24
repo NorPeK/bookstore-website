@@ -19,7 +19,7 @@ const Home = () => {
   // Fetch books when component mounts
   useEffect(() => {
     setLoading(true); // Set loading to true when fetching starts
-    axios.get("http://localhost:5555/books") // Make a GET request to the API
+    axios.get("https://bookstore-website-1-es0v.onrender.com/books") // Make a GET request to the API
       .then((response) => {
         setBooks(response.data.data); // Set books state with the response data
         setLoading(false); // Stop loading once data is fetched
