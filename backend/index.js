@@ -14,7 +14,13 @@ const app = express(); // Create an instance of the Express application
 
 // Middleware
 app.use(express.json()); // Middleware to parse incoming JSON requests
-app.use(cors()); // Allow all origins for simplicity
+app.use(
+    cors({
+        origin: "https://bookstore-website-1-es0v.onrender.com", // Replace with your deployed frontend URL
+        methods: ["GET", "POST", "PUT", "DELETE"],
+        allowedHeaders: ["Content-Type"],
+    })
+); // Allow all origins for simplicity
 
 // Serve static files from the frontend's dist directory
 app.use(express.static(path.join(__dirname, "dist")));
