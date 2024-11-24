@@ -40,7 +40,7 @@ const EditBook = () => {
     axios.put(`http://localhost:5555/books/${id}`, data)
     .then(() => {
       setLoading(false);
-      enqueueSnackbar("Book Edited sucessfully" , {variant: 'sucess'});
+      enqueueSnackbar("Book Edited successfully" , {variant: 'success'});
       navigate('/')
     })
     .catch((error) => {
